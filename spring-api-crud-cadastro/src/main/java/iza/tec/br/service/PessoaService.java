@@ -37,7 +37,7 @@ public class PessoaService {
     }
 
     @Transactional
-    public Integer gravar(Integer id, PessoaRequest requisicao){
+    private Integer gravar(Integer id, PessoaRequest requisicao){
         try {
             //pesquisa sobre tratamento de exceções
             //e handler exception no spring
@@ -53,7 +53,9 @@ public class PessoaService {
             BeanUtils.copyProperties(requisicao,entity); //
             //copiando dados da request endereço para a entity
             BeanUtils.copyProperties(requisicao.getEndereco(),endereco);
+
             entity.getEnderecos().add(endereco);
+
             repository.save(entity);
             return entity.getId();
 
