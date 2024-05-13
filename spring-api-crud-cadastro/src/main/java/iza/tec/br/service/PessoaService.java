@@ -1,5 +1,7 @@
 package iza.tec.br.service;
 
+import iza.tec.br.model.dto.EnderecoRequest;
+import iza.tec.br.model.dto.EnderecoResponse;
 import iza.tec.br.model.dto.PessoaRequest;
 import iza.tec.br.model.dto.PessoaResponse;
 import iza.tec.br.model.entity.EnderecoEntity;
@@ -85,6 +87,15 @@ public class PessoaService {
         PessoaResponse response = new PessoaResponse();
         BeanUtils.copyProperties(entity, response);
         //se quiser já retornar o(s) endereco(s)
+        //tenha a logica do endereço padrão
+        //o céu é o limite
+        response.setEndereco( convert(entity.getEnderecos().get(0)) );
+        return response;
+    }
+    //convert endereço
+    private EnderecoResponse convert(EnderecoEntity entity){
+        EnderecoResponse response = new EnderecoResponse();
+        BeanUtils.copyProperties(entity, response);
         return response;
     }
 }
