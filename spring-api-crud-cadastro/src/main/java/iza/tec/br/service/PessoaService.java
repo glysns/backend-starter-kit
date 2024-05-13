@@ -46,15 +46,14 @@ public class PessoaService {
                     .orElseThrow(() -> new NoSuchElementException("Elemento não encontrado"))
                     : new PessoaEntity();
 
-            PessoaEntity pessoa = new PessoaEntity();
             EnderecoEntity endereco = new EnderecoEntity();
             //copiando dados da request para a entity
-            BeanUtils.copyProperties(requisicao,pessoa); //
+            BeanUtils.copyProperties(requisicao,entity); //
             //copiando dados da request endereço para a entity
             BeanUtils.copyProperties(requisicao.getEndereco(),endereco);
-            pessoa.getEnderecos().add(endereco);
-            repository.save(pessoa);
-            return pessoa.getId();
+            entity.getEnderecos().add(endereco);
+            repository.save(entity);
+            return entity.getId();
 
         } catch (Exception ex) {
             log.error("Não foi possível incluir ou alterar a Aplicacao [ %s ]", requisicao.getNome(), ex);
