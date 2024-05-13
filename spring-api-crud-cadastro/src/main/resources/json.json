@@ -1,0 +1,27 @@
+{
+  "nome": "Gleyson Sampaio",
+  "aniversario": "1990-10-25",
+  "cpf": "88609844565",
+  "endereco": {
+    "cep": "86098244",
+    "logradouro": "Rua das marias",
+    "numero": "123",
+    "cidade": "Teresina",
+    "estado": "PI"
+  }
+}
+
+
+
+{
+  "nome": "Gleyson Sampaio de Oliveira",
+  "aniversario": "1990-10-25",
+  "cpf": "88609844565",
+  "endereco": {
+    "cep": "86098244",
+    "logradouro": "Rua das flores",
+    "numero": "456",
+    "cidade": "Teresina",
+    "estado": "PI"
+  }
+}

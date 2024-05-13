@@ -39,7 +39,7 @@ public class PessoaService {
         try {
             //pesquisa sobre tratamento de exceções
             //e handler exception no spring
-            if(repository.existsByCpf(requisicao.getCpf()))
+            if(id == null && repository.existsByCpf(requisicao.getCpf()))
                 throw new RuntimeException("Já existe uma pessoa com este cpf");
 
             PessoaEntity entity = Optional.ofNullable(id).isPresent() ? repository.findById(id)
