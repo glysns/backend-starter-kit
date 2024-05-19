@@ -3,8 +3,9 @@ package iza.tec.br.model.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-@Data
 @Entity
+@Table(name = "tab_endereco")
+@Data
 public class EnderecoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

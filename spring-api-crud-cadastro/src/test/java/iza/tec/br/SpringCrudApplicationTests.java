@@ -1,9 +1,14 @@
 package iza.tec.br;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+
 
 @SpringBootTest
-class SpringCrudApplicationTests {
-
-
+@ActiveProfiles("test")
+public class SpringCrudApplicationTests {
+    @Test
+    void contextLoads() {
+    }
 }

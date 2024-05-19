@@ -51,11 +51,11 @@ public class PessoaService {
             EnderecoEntity endereco = new EnderecoEntity();
             //copiando dados da request para a entity
             BeanUtils.copyProperties(requisicao,entity); //
-            //copiando dados da request endereço para a entity
-            BeanUtils.copyProperties(requisicao.getEndereco(),endereco);
-
-            entity.getEnderecos().add(endereco);
-
+            if(requisicao.getEndereco()!=null) {
+                //copiando dados da request endereço para a entity
+                BeanUtils.copyProperties(requisicao.getEndereco(), endereco);
+                entity.getEnderecos().add(endereco);
+            }
             repository.save(entity);
             return entity.getId();
 

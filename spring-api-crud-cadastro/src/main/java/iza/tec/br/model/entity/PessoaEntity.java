@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "tab_pessoa")
 @Data
 public class PessoaEntity {
     @Id
